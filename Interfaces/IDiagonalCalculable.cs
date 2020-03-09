@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace EnvelopesTask.Interfaces
 {
-    interface IDiagonalCalculable
+    public interface IDiagonalCalculable
     {
-        public double CalculateDiagonal();
+        double CalculateDiagonal();
     }
 }

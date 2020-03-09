@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace EnvelopesTask.Interfaces
 {
-    interface IHeightCalculable
+    public interface IHeightCalculable
     {
-       public double CalculateHeight();
+       double CalculateHeight();
     }
 }

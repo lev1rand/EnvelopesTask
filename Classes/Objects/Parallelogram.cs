@@ -3,7 +3,7 @@ using EnvelopesTask.Interfaces;
 
 namespace EnvelopesTask.Classes.Objects
 {
-    class Parallelogram : IHeightCalculable, IDiagonalCalculable//parallelogram(dif sides), rhombus (similiar sides)
+    class Parallelogram : IHeightCalculable, IDiagonalCalculable//parallelogram(different sides), rhombus (similiar sides)
     {
         #region
 
@@ -17,12 +17,12 @@ namespace EnvelopesTask.Classes.Objects
 
         public double[] sides;
 
-        protected int[] angles;
+        protected double[] angles;
 
         public Parallelogram()
         {
             sides = new double[MAX_QUANTITY];
-            angles = new int[MAX_QUANTITY];
+            angles = new double[MAX_QUANTITY];
 
             sides.Initialize();
             angles.Initialize();
@@ -31,7 +31,7 @@ namespace EnvelopesTask.Classes.Objects
         public Parallelogram(double firstSide, double secondSide, int firstAngle, int secondAngle)
         {
             sides = new double[MAX_QUANTITY];
-            angles = new int[MAX_QUANTITY];
+            angles = new double[MAX_QUANTITY];
 
             if (firstAngle > secondAngle)
             {
@@ -56,12 +56,12 @@ namespace EnvelopesTask.Classes.Objects
 
         public double CalculateHeight()
         {
-            return sides[0] * Math.Sin(angles[0]);
+            return sides[0] * Math.Sin(angles[0]* 0.0175);
         }
 
         public double CalculateDiagonal()
         {
-            return Math.Sqrt(Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) - 2 * sides[0] * sides[1] * Math.Cos(angles[1]));
+            return Math.Sqrt(Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) - 2 * sides[0] * sides[1] * Math.Cos(angles[0] * 0.0175));
         }
     }
 }
