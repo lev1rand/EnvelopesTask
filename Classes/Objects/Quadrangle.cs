@@ -6,23 +6,44 @@ using System.Threading.Tasks;
 
 namespace EnvelopesTask.Classes.Objects
 {
-    abstract class Quadrangle
+    class Parallelogram
     {
         #region
 
-        private const int MAX_QUANTITY = 4;
+        protected const int MAX_QUANTITY = 4;
 
         #endregion
 
         public double[] sides;
 
-        public double[] angles;
+        public int[] angles;
         
-        public Quadrangle()
+        public Parallelogram()
         {
             sides = new double[MAX_QUANTITY];
-            angles = new double[MAX_QUANTITY];
+            angles = new int[MAX_QUANTITY];
             sides.Initialize();
+            angles.Initialize();
+        }
+
+        public Parallelogram(double firstSide, double secondSide, int firstAngle, int secondAngle)
+        {
+            sides = new double[MAX_QUANTITY];
+            angles = new int[MAX_QUANTITY];
+
+            for (int index = 0; index < MAX_QUANTITY; index++)
+            {
+                if (index % 2 == 0)
+                {
+                    sides[index] = firstSide;
+                    angles[index] = firstAngle;
+                }
+                else
+                {
+                    sides[index] = secondSide;
+                    angles[index] = secondAngle;
+                }
+            }
         }
     }
 }

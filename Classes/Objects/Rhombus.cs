@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EnvelopesTask.Classes.Objects
 {
-    class Rhombus
+    class Rhombus: Parallelogram
     {
+
     }
 }
