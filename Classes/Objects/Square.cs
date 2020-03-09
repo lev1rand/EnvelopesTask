@@ -15,7 +15,7 @@ namespace EnvelopesTask.Classes.Objects
         private const int DEFAULT_ANGLE_VALUE = 90;
 
         #endregion
-
+        
         public Square() : base()
         {
             for (int index = 0; index < MAX_QUANTITY; index++)
