@@ -10,6 +10,7 @@ namespace EnvelopesTask
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

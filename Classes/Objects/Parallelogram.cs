@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EnvelopesTask.Interfaces;
 
 namespace EnvelopesTask.Classes.Objects
 {
-    class Parallelogram: IHeightCalculable, IDiagonalCalculable
+    class Parallelogram : IHeightCalculable, IDiagonalCalculable//parallelogram(dif sides), rhombus (similiar sides)
     {
         #region
 
@@ -22,7 +18,7 @@ namespace EnvelopesTask.Classes.Objects
         public double[] sides;
 
         protected int[] angles;
-        
+
         public Parallelogram()
         {
             sides = new double[MAX_QUANTITY];
@@ -36,8 +32,8 @@ namespace EnvelopesTask.Classes.Objects
         {
             sides = new double[MAX_QUANTITY];
             angles = new int[MAX_QUANTITY];
-            
-            if( firstAngle>secondAngle )
+
+            if (firstAngle > secondAngle)
             {
                 var temp = firstAngle;
                 firstAngle = secondAngle;
@@ -58,7 +54,7 @@ namespace EnvelopesTask.Classes.Objects
             }
         }
 
-       public double CalculateHeight()
+        public double CalculateHeight()
         {
             return sides[0] * Math.Sin(angles[0]);
         }
