@@ -45,9 +45,9 @@ namespace EnvelopesTask.Classes.Validation
                 return false;
             }
 
-            if (Int32.TryParse(value[1], out int firstParam) &&
-                Int32.TryParse(value[2], out int secondParam) &&
-                Int32.TryParse(value[3], out int thirdParam))//incorrect type
+            if ( !(Int32.TryParse(value[1], out int firstParam) ||
+                Int32.TryParse(value[2], out int secondParam) ||
+                Int32.TryParse(value[3], out int thirdParam)) )//incorrect type
             {
                 LogError(3);
 

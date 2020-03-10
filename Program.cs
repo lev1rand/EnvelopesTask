@@ -11,7 +11,7 @@ namespace EnvelopesTask
     {
         static void Main(string[] args)
         {
-            Parallelogram envelopeFirst = new Parallelogram(2, 3, 30, 150);
+           /* Parallelogram envelopeFirst = new Parallelogram(2, 3, 30, 150);
             Parallelogram envelopeSecond = new Parallelogram(4, 5, 60, 120);
             Square envelope1 = new Square(24, 24, 90, 90);
             Square envelope2 = new Square(5, 5, 90, 90);
@@ -46,7 +46,7 @@ namespace EnvelopesTask
                         Console.WriteLine("None of the envelopes can be placed in another!");
                     }
                 }
-            }
+            }*/
             Console.ReadKey();
         }
     }
