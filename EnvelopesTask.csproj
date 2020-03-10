@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Classes\Objects\Parallelogram.cs" />
     <Compile Include="Classes\Objects\Square.cs" />
+    <Compile Include="Classes\Validation\Validator.cs" />
     <Compile Include="Interfaces\IDiagonalCalculable.cs" />
     <Compile Include="Interfaces\IHeightCalculable.cs" />
     <Compile Include="Program.cs" />
@@ -55,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\Logging\" />
-    <Folder Include="Classes\Validation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
