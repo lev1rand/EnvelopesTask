@@ -32,7 +32,7 @@ namespace EnvelopesTask.Classes.Validation
             AddError(5, "Negative numbers inputted");
         }
 
-        public bool IsValid(string[] value, Type objectType)
+        public bool IsValid(ref string[] value, Type objectType)
         {
             if (value.Length > PARAMS_REQUIRED)//too little params
             {
@@ -84,13 +84,65 @@ namespace EnvelopesTask.Classes.Validation
                 }
                 else
                 {
-                    if(objectType == typeof(Parallelogram))
+                    if (objectType == typeof(Parallelogram) &&
+                        Double.Parse(value[2]) + Double.Parse(value[3]) != SQUARE_ANGLE * 2)
                     {
+                        LogError(4);
 
+                        return false;
                     }
                 }
-                return true;
             }
+            else//3 params inputted
+            {
+                if (!(Double.TryParse(value[0], out double firstParam) &&
+                    Double.TryParse(value[1], out double secondParam) &&
+                    Double.TryParse(value[2], out double thirdParam))
+                    )
+                {
+                    LogError(3);
+
+                    return false;
+                }
+
+                if (Double.Parse(value[0]) < 0 ||
+                    Double.Parse(value[1]) < 0 ||
+                    Double.Parse(value[2]) < 0 )//negative numbers inputted
+                {
+                    LogError(5);
+
+                    return false;
+                }
+
+                if (objectType == typeof(Square))
+                {
+                    if (!(Int32.TryParse(value[2], out int firstAngle) ||
+                        firstAngle != SQUARE_ANGLE))//square should have only 90 angles per side
+                    {
+                        LogError(4);
+
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (objectType == typeof(Parallelogram))
+                    {
+                        if (Double.Parse(value[2]) >= SQUARE_ANGLE * 2)
+                            {
+                            LogError(4);
+
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        value[3] = (SQUARE_ANGLE * 2 - Double.Parse(value[2])).ToString();
+                    }
+                }
+            }
+
+            return true;
         }
 
         private void LogError(int code)

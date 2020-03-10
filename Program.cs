@@ -47,7 +47,7 @@ namespace EnvelopesTask
                     }
                 }
             }*/
-            Console.WriteLine(envelopeFirst.GetType());
+
             Console.ReadKey();
         }
     }
